@@ -2,7 +2,6 @@ package com.github.ioloolo.musicplayer.domain.auth.model;
 
 import java.util.Set;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 

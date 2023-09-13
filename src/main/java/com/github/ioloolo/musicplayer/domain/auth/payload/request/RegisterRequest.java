@@ -1,6 +1,5 @@
 package com.github.ioloolo.musicplayer.domain.auth.payload.request;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
