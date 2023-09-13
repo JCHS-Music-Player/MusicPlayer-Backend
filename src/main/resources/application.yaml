@@ -3,12 +3,12 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      username: username
-      password: password
-      database: test
+      username: sondaehyeon01
+      password: RootMJ0616!~
+      database: MusicPlayer
       authentication-database: admin
 
 app:
   jwt:
-    secret: JWT_SECRET
+    secret: ulYSSfm6eXNAs3rOoIkjp242qEZfmIECj0V2gICs2uG8Z1IPiRwQwEEkBsLvpJWZEhj7CVENMQx0SfoqOmwVJ1BzUYiwPH4HBwEnbvyiw8Wcu3G12RzfFsfXqnGWejA1SgreFJgVI2vdJIms9ZUtrOQLfRjyTcdrsw9Vaul3k5SlI7QAxtaEPCvm2nTNjwKx5NDMHidQvk5s5oH8qLMsoLR2Dui7QpA195WIiUPmYG3Et0mvEuyT5Ttzr1rHMiqs
     expirationMs: 86400000
