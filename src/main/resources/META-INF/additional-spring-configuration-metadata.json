@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "app.jwt.secret",
+      "type": "java.lang.String",
+      "description": "Description for app.jwt.secret."
+    },
+    {
+      "name": "app.jwt.expirationMs",
+      "type": "java.lang.String",
+      "description": "Description for app.jwt.expirationMs."
+    },
+    {
+      "name": "app.spotify.clientId",
+      "type": "java.lang.String",
+      "description": "Description for app.spotify.clientId."
+    },
+    {
+      "name": "app.spotify.clientSecret",
+      "type": "java.lang.String",
+      "description": "Description for app.spotify.clientSecret."
+    },
+    {
+      "name": "app.youtube.api.key",
+      "type": "java.lang.String",
+      "description": "Description for app.youtube.api.key."
+    }
+  ]
+}
