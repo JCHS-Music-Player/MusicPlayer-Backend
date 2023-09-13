@@ -60,9 +60,4 @@ public class TrackController {
 				.headers(headers)
 				.body(new InputStreamResource(mp3FileStream));
 	}
-
-	@PostMapping("/recommend")
-	public ResponseEntity<?> recommend(Authentication authentication) {
-		return ResponseEntity.ok(service.recommend(((UserDetailsImpl) authentication.getPrincipal()).getId()));
-	}
 }

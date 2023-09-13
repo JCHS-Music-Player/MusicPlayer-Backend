@@ -13,9 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.github.ioloolo.music_player.domain.auth.model.User;
-import com.github.ioloolo.music_player.domain.auth.repository.UserRepository;
-import com.github.ioloolo.music_player.domain.history.repository.HistoryRepository;
 import com.github.ioloolo.music_player.domain.track.data.SpotifyTrack;
 import com.neovisionaries.i18n.CountryCode;
 
@@ -34,9 +31,6 @@ public class TrackService {
 	private String youtubeApiKey;
 
 	private final SpotifyApi api;
-
-	private final UserRepository userRepository;
-	private final HistoryRepository historyRepository;
 
 	@SneakyThrows({IOException.class, ParseException.class, SpotifyWebApiException.class})
 	public List<SpotifyTrack> searchTrack(String query) {
@@ -78,26 +72,9 @@ public class TrackService {
 		}
 	}
 
-	@SneakyThrows({IOException.class, ParseException.class, SpotifyWebApiException.class})
-	public List<SpotifyTrack> recommend(String userId) {
-		User user = userRepository.findById(userId).orElseThrow();
-
-		String[] history = historyRepository.findByUser(user)
-				.getTracks()
-				.stream()
-				.limit(50)
-				.map(SpotifyTrack::getId)
-				.toArray(String[]::new);
-
-		Track[] tracks = api.getSeveralTracks(history)
-				.build()
-				.execute();
-
-		return Arrays.stream(tracks).map(SpotifyTrack::from).toList();
-	}
-
 	@PostConstruct
 	public void init() {
+		//noinspection ResultOfMethodCallIgnored
 		Paths.get("./music").toFile().mkdirs();
 	}
 }
